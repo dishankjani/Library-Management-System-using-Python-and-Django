@@ -1,0 +1,20 @@
+<h1>welcome {{user}}      </h1>
+<a href="http://127.0.0.1:8000/logout">Logout</a><br>
+<br>
+{% if user.is_authenticated %}
+
+
+
+{% if user.is_superuser %}
+
+<h2>Hello Admin</h2>
+
+<a href="http://127.0.0.1:8000/books/uploadbook">Add Book</a><br>
+
+
+
+{% endif %}
+
+<a href="http://127.0.0.1:8000/books/bookslist">View The Books</a>
+
+{% endif %}

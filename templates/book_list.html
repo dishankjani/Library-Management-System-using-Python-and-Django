@@ -1,0 +1,22 @@
+{% if bookaccess %}
+
+{% for items in bookaccess %}
+
+
+    <h3>{{items.title}}</h3><br>
+    <p>Written by: {{items.author_name}}<</p><br>
+    <p>About Book: {{items.Book_details}}</p><br>
+    <p>Price: {{items.price}}</p><br>
+    <p>Quantity: {{items.quantity}}</p>
+
+    {% if user.is_superuser %}
+    <p><a href="http://127.0.0.1:8000/books/bookupdate/{{items.id}}">Update Record</a></p><br>
+    <p><a href="http://127.0.0.1:8000/books/deletebook/{{items.id}}">Delete Record</a></p>
+    {% endif %}
+    <p>--------------------------------------------------------------------------------------------------</p>
+
+
+{% endfor %}
+{%  else %}
+<h3 class="w3-center">oops! No Books found</h3>
+{% endif %}

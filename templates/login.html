@@ -1,0 +1,7 @@
+
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input class="button" type="submit" value="Login">
+</form>
+<p>Don't have an account? <a href="http://127.0.0.1:8000/register">Register</a></p>
